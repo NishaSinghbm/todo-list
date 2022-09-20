@@ -1,0 +1,26 @@
+#taskForm{
+    height: 66px;
+    float: right;
+    margin: 16px 16px 16px 0px;
+}
+
+#taskInput{
+    height: 30px;
+    width: 475px;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
+#taskInput:focus{
+    border: none;
+    outline: none;
+}
+
+#taskInput::placeholder{
+    text-align: center;
+    font-size: larger;
+    color: rgb(204, 204, 204);
+}

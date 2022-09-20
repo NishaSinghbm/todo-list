@@ -1,0 +1,21 @@
+.showtask{
+    font-weight: 100;
+    font-size: 25px;
+    letter-spacing: 1px;
+    margin: 16px 0;
+    height: 30px;
+    width: 460px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 1000ms;
+}
+
+.completed{
+    text-decoration: line-through rgb(198, 198, 198);
+    color: rgb(198, 198, 198);
+}
+
+#edit{
+    border: 1px solid rgb(128, 68, 16);
+}

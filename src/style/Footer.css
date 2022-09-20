@@ -1,0 +1,42 @@
+#footer{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    background: #fff;
+    color: rgb(121, 121, 121);
+    box-shadow:0px 3px 5px -1px rgb(131, 131, 131), 0px 10px 50px -20px rgb(131, 131, 131);
+    z-index: 1;
+    margin-bottom: 200px;
+}
+
+button{
+    border: none;
+    background: none;
+    outline: none;
+    height: max-content;
+    padding: 3px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+p{
+    margin-left: 10px;
+    align-self: center;
+    font-weight: 100;
+}
+
+#current{
+    border: 1px solid rgb(243,224,224);
+}
+
+#buttonBox{
+    align-self: center;
+    margin-left: 65px;
+}
+
+#clearComp{
+    margin-left: 100px;
+    align-self: center;
+}

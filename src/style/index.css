@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html{
+    background: rgb(245,245,245);
+}
+
+#root{
+    display: flex;
+    justify-content: center;
+}
