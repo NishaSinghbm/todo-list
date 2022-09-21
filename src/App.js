@@ -5,6 +5,9 @@ import Header from './components/static/Header';
 import Input from "./components/static/Input.js";
 import TodoList from './components/dynamic/TodoList';
 import Footer from './components/dynamic/Footer';
+//
+import * as Icon from "react-icons/fi";
+import Checkbox from "react-custom-checkbox";
 
 function App() {
   const [todo,setTodo]=useState([]);
@@ -94,7 +97,30 @@ function App() {
       <div id="inputBox">
         <Input addTask = {addTask}/>
         {todo.length>0?
-          <input checked = {checkIfAllChecked()} onChange={handleMasterCheck} type="checkbox" name="checkCompleted" id="checkCompleted" />:""
+          // <input checked = {checkIfAllChecked()} onChange={handleMasterCheck} type="checkbox" name="checkCompleted" id="checkCompleted" /> 
+          <Checkbox
+              checked = {checkIfAllChecked()} onChange={handleMasterCheck} type="checkbox" name="checkCompleted" id="checkCompleted" 
+              icon={
+                  <div
+                      style={{
+                      display: "flex",
+                      flex: 1,
+                      backgroundColor: "#fff",
+                      }}
+                  >
+                      <Icon.FiChevronDown color="#dcdcdc" size={29} /> 
+                  </div>
+              }
+              borderColor="#dcdcdc"
+              background={
+                <Icon.FiChevronDown color="#dcdcdc" size={29} /> 
+            }
+              borderRadius={20}
+              style={{ overflow: "hidden" ,border : "none", marginLeft: "5px" ,transition: "1000ms"}}
+              size={30}
+          />
+          
+          :""
         }
       </div>
       {toggleShowlist()}
