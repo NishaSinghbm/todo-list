@@ -4,7 +4,7 @@
     letter-spacing: 1px;
     margin: 16px 0;
     height: 30px;
-    width: 460px;
+    width: 410px;
     text-align: left;
     border: none;
     outline: none;
@@ -17,5 +17,39 @@
 }
 
 #edit{
-    border: 1px solid rgb(128, 68, 16);
+    /* border: 1px solid rgb(128, 68, 16); */
+    background: rgb(255, 239, 226);
+}
+
+.priority, .date{
+    position: relative;
+    top: 35%;
+    height: 20px;
+}
+
+.priority{
+    width: 25px;
+}
+
+.p3{
+    color: red;
+}
+
+.p2{
+    color: orange;
+}
+
+.p1{
+    color: green;
+}
+
+.date{
+    font-weight: 100;
+    width: 90px;
+}
+
+.formShow{
+    width: 550px;
+    display: flex;
+    justify-content: space-between;
 }

@@ -21,7 +21,8 @@ function TodoTask (props){
     }
 
     return (
-        <form onSubmit = {handleEditSave}>
+        <form className="formShow" onSubmit = {handleEditSave}>
+            <h3 className={`priority p${props.todoItem.priority.length}`}>{props.todoItem.priority}</h3>
             <input
                 onDoubleClick={!isEdit ? handleEdit : console.log("yo")}
                 className={props.todoItem.isCompleted? "completed showtask" : "showtask"}
@@ -31,6 +32,7 @@ function TodoTask (props){
                 onChange = {handleChange}
                 readOnly = {isEdit ? "" : "readOnly"}
             />
+            <h4 className="date">{props.todoItem.date}</h4>
         </form>
     );
 }

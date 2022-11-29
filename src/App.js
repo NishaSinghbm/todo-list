@@ -10,12 +10,13 @@ import * as Icon from "react-icons/fi";
 import Checkbox from "react-custom-checkbox";
 
 function App() {
-  const [todo,setTodo]=useState([]);
+  var [todo,setTodo]=useState([]);
   const [show, changeShowStatus] = useState('all');
 
-  const addTask = (task)=>{
-    if(task !== '')
-      setTodo([...todo, {id: Date.now(), task: task, isCompleted: false}]);
+  const addTask = (priority, task, date)=>{
+    if(task !== ''){
+      setTodo([...todo, {id: Date.now(),priority: priority, task: task, date: date , isCompleted: false}]);
+    }
   }
 
   const clearCompleted = ()=> {
@@ -60,9 +61,11 @@ function App() {
   }
 
   const checkIfAllChecked = ()=>{
-    if( todo.findIndex((obj => obj.isCompleted === false)) === -1)
-      return true;
-    return false;
+    if (todo.length !== 0) {
+      if( todo.findIndex((obj => obj.isCompleted === false)) === -1)
+        return true;
+      }
+      return false;
   }
 
   const editTask = (id,newtask) => {
@@ -78,17 +81,19 @@ function App() {
   }
 
   const handleMasterCheck = ()=>{
-    if(checkIfAllChecked()){
-      todo.forEach((Element)=>{
-        Element.isCompleted = false;
-      })
+    if (todo.length !== 0) {
+      if(checkIfAllChecked()){
+        todo.forEach((Element)=>{
+          Element.isCompleted = false;
+        })
+      }
+      else{
+        todo.forEach((Element)=>{
+          Element.isCompleted = true;
+        })
+      }
+      setTodo([...todo]);
     }
-    else{
-      todo.forEach((Element)=>{
-        Element.isCompleted = true;
-      })
-    }
-    setTodo([...todo]);
   }
 
   return (
@@ -96,8 +101,7 @@ function App() {
       <Header/>
       <div id="inputBox">
         <Input addTask = {addTask}/>
-        {todo.length>0?
-          // <input checked = {checkIfAllChecked()} onChange={handleMasterCheck} type="checkbox" name="checkCompleted" id="checkCompleted" /> 
+        <div id="inputCheckBox">
           <Checkbox
               checked = {checkIfAllChecked()} onChange={handleMasterCheck} type="checkbox" name="checkCompleted" id="checkCompleted" 
               icon={
@@ -105,23 +109,18 @@ function App() {
                       style={{
                       display: "flex",
                       flex: 1,
-                      backgroundColor: "#fff",
+                      backgroundColor: "#fff"
                       }}
                   >
                       <Icon.FiChevronDown color="#dcdcdc" size={29} /> 
                   </div>
               }
               borderColor="#dcdcdc"
-              background={
-                <Icon.FiChevronDown color="#dcdcdc" size={29} /> 
-            }
               borderRadius={20}
               style={{ overflow: "hidden" ,border : "none", marginLeft: "5px" ,transition: "1000ms"}}
               size={30}
           />
-          
-          :""
-        }
+        </div>
       </div>
       {toggleShowlist()}
     </div>

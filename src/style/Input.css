@@ -1,17 +1,19 @@
 #taskForm{
+    display: flex;
     height: 66px;
     float: right;
-    margin: 16px 16px 16px 0px;
+    margin: 16px 6px 16px 0px;
 }
 
 #taskInput{
     height: 30px;
-    width: 475px;
+    width: 370px;
     border: none;
     outline: none;
     font-size: 25px;
     letter-spacing: 1px;
     font-weight: 100;
+    margin-left: 10px;
 }
 
 #taskInput:focus{
@@ -23,4 +25,50 @@
     text-align: center;
     font-size: larger;
     color: rgb(204, 204, 204);
+}
+
+#taskDate{
+    height: 44%;
+    width: 130px;
+    padding: 0;
+    background: none;
+    font-size: larger;
+    font-weight: 100;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#taskDate::placeholder{
+    color: rgb(204, 204, 204);
+}
+
+#taskDate:focus{
+    border: none;
+}
+
+#taskDate:active{
+    border: none;
+}
+
+.inputLabel{
+    position: relative;
+    top: 5px;
+    margin: 0 3px;
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    cursor: pointer;
+}
+
+#low{
+    color: green;
+}
+
+#medium{
+    color: orange;
+}
+
+#high{
+    color: red;
 }
